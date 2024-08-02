@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAP</title>
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body class="lContain">
+    <%- include ('partials/navbar.ejs') %>
+
+    <div class="loginItem">
+        
+        <h1 class="headin"><b>Activity: </b><%= activity.title %></h1>
+        <div id="line"></div>
+        
+        <a href="/activities">
+            <button type="button" class="backBtn">
+                <h1 class="navTxt">Back</h1>
+            </button>
+        </a>
+        
+        <div class="details">
+            <div>
+                <p><b>Initiated by:</b><br> <%= userN[0].username %></p>
+                
+                <p>
+                    <b>Activity date: </b><br><% const dD = new Date(activity.date_time); %>
+                    <% const formattedD = dD.toLocaleString('en-US'); %>
+                    <td><%= formattedD %></td>
+                </p>
+                
+                <p><b>Location:</b><br> <%= activity.location %></p>
+               
+                <p><b>Capacity:</b><br> <%= activity.capacity %> People(s)</p>
+               
+                <p><b>Activity Description:</b><br> <%= activity.description %></p>
+                <% if(user.name === userN[0].username) { %>
+                    <div class="part">
+                        <div class="spart">
+                            <a href="/editActi/<%= activity.id %>" class="navBtn">
+                                <button class="navBtn">
+                                    <h1 class="navTxt">Edit</h1>
+                                </button>
+                                
+                            </a>
+                        </div>
+                        <div class="spart">
+                            <a href="/deleteActi/<%= activity.id %>" onclick="return confirm('Are you sure you want to delete this student')" class="navBtn">
+                                <button class="navBtn"><h1 class="navTxt">Delete</h1></button>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    
+                <% } %>
+            </div>
+        </div>
+        
+        
+    </div>
+</body>
+</html>

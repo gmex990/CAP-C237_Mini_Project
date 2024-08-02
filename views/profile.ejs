@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAP</title>
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body class="lContain">
+    <%- include ('partials/navbar.ejs') %>
+    <div class="loginItem">
+        <h1 class="headin"><%= profile.username %>'s Profile</h1>
+        <div id="line"></div>
+        
+        <div class="part">
+            <p class="title"><b>Profile Picture: </b></p>  <img src="/images/<%= profile.profile_pic %>" id="pProfile"> 
+        </div>
+        <div class="part">
+            <p class="title"><b>Username: </b> <%= profile.username %></p>
+        </div>
+        <div class="part">
+            <p class="title"><b>Email: </b> <%= profile.email %></p>
+        </div>
+        <div class="part">
+            <p class="title">
+                <b>Contact number: </b> 
+                <% if (profile.phone == null) { %>
+                    Phone number not registered
+                <% }else{ %>
+                    <%= profile.phone %>
+                <% } %>
+                
+            </p>
+        </div>
+        <div class="part">
+            <p class="title"><b>Email: </b> <%= profile.email %></p>
+        </div>
+                
+            
+        <div class="part">
+            <a href="/updProfile"><button type="button" class="navBtn" id="sbtn"><h1 class="navTxt">Edit Profile</h1></button></a>
+        </div>
+        <div class="part">
+            <form action="/profile" method="post">
+                <button type="submit" id="submitSignup" onclick="return confirm('Are you sure you want to Logout?')">Logout</button>
+            </form>
+            
+        </div>
+            
+    </div>
+</body>
+</html>

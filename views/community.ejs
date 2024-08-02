@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAP</title>
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body class="lContain">
+    <%- include ('partials/navbar.ejs') %>
+
+    <div class="loginItem">
+        <h1 class="headin"><%= community.cName %></h1>
+        <div id="line"></div>
+        
+        <a href="/communities">
+            <button type="button" class="backBtn">
+                <h1 class="navTxt">Back</h1>
+            </button>
+        </a>
+        
+        <div class="details">
+            <div>
+                <br>
+                <img src = "/images/<%= community.cPic %>" class="cProfile">
+                <br>
+                <p>Description:<br> <%= community.cDesc %></p> 
+            </div>
+        </div>
+        
+        
+    </div>
+</body>
+</html>

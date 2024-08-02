@@ -1,0 +1,417 @@
+/*For the nav bar*/
+
+.bg{
+    margin: 0px 20px 0px 20px;
+    height: 100px;
+    top: 0;
+    background: #919191;
+    position: sticky;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: left;
+    border-radius: 20px;
+}
+
+
+.logo{
+    margin: 0px 0px 0px 0px;
+    width: 100px;
+    height: 100px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+#nav_link{
+    padding-left: 10px;
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+
+.navLink{
+    text-decoration: none;
+
+}
+
+#nav_link p{
+    color: white;
+    font-size: 30px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    margin-right: 30px;
+    
+}
+
+#nav_link h1{
+    color: white;
+    font-size: 30px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    
+}
+
+#nav_link p img{
+    width: 20px;
+    height: 20px;
+    padding: 0 100 0 100;
+    visibility: hidden;
+}
+
+#nav_link p:hover img{
+    visibility: visible;
+}
+
+#nav_link p:hover{
+    color: black;
+    
+}
+
+
+
+#profile{
+    right: 20px;
+    padding-top:20px;
+    padding-left: 10px;
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    position: absolute;
+}
+
+#profile img{
+    width: 50px;
+    height: 50px;
+    padding: 0 100 0 100;
+    border-radius: 50px;
+}
+
+#profile p{
+    padding-right: 10px;
+    color: white;
+    font-size: 25px;
+    margin-top: 10px;
+}
+
+#profile p:hover{
+    color: black;
+}
+
+
+
+/*body background*/
+
+.lContain{
+    background-color: #f1f2f4;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("../images/bg.png");
+    background-size:auto;
+    background-repeat: no-repeat;
+    background-position:top;
+}
+
+/*For login page*/
+
+.loginItem{
+    margin-top: 50px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    background-color: rgba(145, 145, 145, 0.5);
+    width:auto;
+    height: auto;
+    padding: 25px 25px 25px 25px;
+    border-radius: 50px;
+    min-height: 300px;
+}
+
+.title{
+    font-size: 30px;
+    text-align: left;
+    margin: 10px 0px 10px 20px;
+    color: black;
+}
+
+.headin{
+    font-size: 30px;
+    text-align: center;
+    margin: 10px 0px 10px 0px;
+    color: black;
+}
+
+#line{
+    width: auto;
+    height: 5px;
+    background-color: black;
+    margin: 0px 5px 0px 5px;
+}
+
+.part{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: auto;
+    margin: 20px 20px 0px 50px;
+    justify-content: center;
+    
+}
+
+.input{
+    border-width: 5px;
+    border-color: blueviolet;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 100px;
+    padding: 5px 10px 5px 10px;
+    min-width: 100px;
+    width: 300px;
+    font-size: 15px;
+    background-color: #f1f2f4;
+    height: 40px;
+}
+
+.submitBtn{
+    border-radius: 100px;
+    border-width: 5px;
+    border-color: green;
+    background-color: #f1f2f4;
+    font-size: 15px;
+    width: 200px;
+    height: 50px;
+}
+
+.sText{
+    font-size: 30px;
+    align-self: center;
+    margin: 5px 0px 0px 0px;
+    color: black;
+}
+
+.sText a{
+    text-decoration: none;
+    color: blue;
+
+}
+
+/*For the signup page*/
+.spart{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: auto;
+    margin: 10px 50px 0px 50px;
+}
+
+#submitSignup{
+    border-radius: 100px;
+    border-width: 5px;
+    border-color: red;
+    background-color: #f1f2f4;
+    font-size: 15px;
+    width: 200px;
+    height: 50px;
+}
+
+#submitSignup:hover{
+    border-color: green;
+
+}
+
+.navTxt{
+    font-size: 30px;
+    text-align: left;
+    margin: 0px 20px 0px 20px;
+    color: black;
+}
+
+.navBtn{
+    border-radius: 100px;
+    border-width: 5px;
+    border-color: purple;
+    background-color: #f1f2f3;
+    width: Auto;
+    height: 50px;
+
+}
+
+
+
+.navBtn:hover{
+    border-color: gold;
+    background-color: black;
+    .navTxt{
+        color: #f1f2f3;
+    }
+}
+
+.backBtn{
+    border-radius: 100px;
+    border-width: 5px;
+    border-color: purple;
+    background-color: #f1f2f3;
+    width: Auto;
+    height: 50px;
+    margin: 10px 0px 0px 0px;
+}
+
+.backBtn:hover{
+    border-color: red;
+    background-color: yellow;
+}
+
+
+.cHead{
+    font-size: 20px;
+    text-align: left;
+    margin: 10px 0px 0px 0px;
+    color: black;
+    font-style: bold;
+    text-decoration: none;
+
+}
+
+.cDesc{
+    font-size: 15px;
+    text-align: left;
+    margin: 5px 0px 5px 0px;
+    color: black;
+    font-style: italic;
+    text-decoration: none;
+
+}
+
+.sect{
+    background-color: #f1f2f3;
+    margin: 0px 20px 0px 20px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 80%;
+}
+
+
+
+#cLine{
+    width: auto;
+    max-width: 267px;
+    height: 3px;
+    background-color: black;
+    margin: 0px 5px 0px -10px;
+}
+
+.details{
+    margin: 5px 5px 5px 5px;
+    font-weight: bold;
+}
+
+.cProfile{
+    width: 50px;
+    height: 50px;
+    padding: 0 100 0 100;
+    border-radius: 50px;
+    
+}
+#pProfile{
+    width: 100px;
+    height: 100px;
+    padding: 0 100 0 100;
+    margin-left: 10px;
+    border-radius: 100px;
+}
+#pProfile:hover{
+    width: 200px;
+    height: 200px;
+    border-radius: 50px;
+}
+#dDesc{
+    min-height: 100px;
+    font-size: small;
+    text-wrap: wrap;
+    padding: 15px 15px 15px 15px;
+}
+
+/*Responsive part*/
+@media (max-width: 955px) {
+    .bg {
+        height: 250px;
+    }
+    #nav_link p{
+        
+        font-size: 30px;
+    }
+
+    #profile{
+        position: relative;
+    }
+    
+}
+
+
+
+@media (max-width: 590px) {
+
+    #nav_link p{
+        
+        font-size: 20px;
+    }
+    #cLine{
+        margin-right: -10px;
+    }
+    
+}
+
+@media (max-width: 576px) {
+    .bg {
+        height: 200px;
+    }
+    
+
+    #profile{
+        position: relative;
+    }
+    .title{
+        font-size: 20px;
+    }
+
+    
+
+}
+
+@media (max-width: 543.50px) {
+    .bg {
+        height: 150px;
+    }
+    #nav_link p{
+        
+        font-size: 12.5px;
+    }
+
+
+    #profile{
+        position: relative;
+    }
+    .title{
+        font-size: 20px;
+    }
+    .navTxt{
+        font-size: 20px;
+    }
+    
+}
+

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAP</title>
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body class="lContain">
+    <%- include ('partials/navbar.ejs') %>
+    <div class="loginItem">
+        <h1 class="headin">Login</h1>
+        <div id="line"></div>
+        <form action="/login" method="POST">
+            <div class="part">
+                <label for="username" class="title">Username:</label><br>
+                <input id="usernameI" name="usernameI" type="text" class="input">
+            </div>
+            <div class="part">
+                <label for="password" class="title">Password:</label><br>
+                <input id="passwordI" name="passwordI" type="password" class="input">
+            </div>
+            <div class="part">
+                <button type="submit" class="submitBtn" id="loginBtn">Login</button>
+            </div>
+        </form>
+        
+        <div class="part">
+            <div class="spart">
+                <% if (msg.stat == 'ns') { %>
+                    <p class="sText">Invalid User/Password, please try again</p>
+                <% } %> 
+            <div class="spart">
+                <p class="sText">No account? <a href="signup">Signup!</a></p>
+            </div>
+            
+            
+            
+            
+        </div>
+        
+    </div>
+</body>
+</html>

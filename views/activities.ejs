@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAP</title>
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body class="lContain">
+    <%- include ('partials/navbar.ejs') %>
+
+    <div class="loginItem">
+        <h1 class="headin">Activities</h1>
+        <div id="line"></div>
+        <div class="part">
+
+            <% if(user.loggedIn) { %>
+                <a href="/cActi">
+                    <button type="button" class="navBtn">
+                        <h1 class="navTxt">Create Activity</h1>
+                    </button>
+                </a>
+            <% } else { %>
+                <a href="/login">
+                    <button type="button" class="navBtn">
+                        <h1 class="navTxt">Create Activity</h1>
+                    </button>
+                </a>
+            <% } %>
+            
+        </div>
+
+        <% if (user.loggedIn) { %>
+            <div class="part">
+                <H1>Your Activities</H1>
+            </div>
+            <% for(let i=0; i < activities.length; i++) { %>
+                <% if(user.id === activities[i].user_id) { %>
+                    <a href="/activity/<%= activities[i].id %>" class="cHead">
+                
+                        <div class="part">
+                            <div class="sect">
+                                <h1 class="cHead"><%= activities[i].title %></h1>
+                                <div id="cLine"></div>
+                                <p class="cDesc"><b>Description:</b> <%= activities[i].description %> </p>
+                                <p class="cDesc"><b>Activity Location:</b> <%= activities[i].location %> </p>
+                                <p><b>When: </b><% const dD = new Date(activities[i].date_time); %>
+                                    <% const formattedD = dD.toLocaleString('en-US'); %>
+                                    <td><%= formattedD %></td></p>
+                                <p class="cDesc"><b>Capacity:</b> <%= activities[i].capacity %> </p>
+                            </div>
+                        </div>
+                    <% } %>
+            <% } %>
+            <div id="line" style="margin-top: 20px;"></div>
+        <% } %>
+        <div class="part">
+            <H1>All Activities</H1>
+        </div>
+        
+        <% for(let i=0; i < activities.length; i++) { %>
+                
+            <a href="/activity/<%= activities[i].id %>" class="cHead">
+            
+            <div class="part">
+                <div class="sect">
+                    <h1 class="cHead"><%= activities[i].title %></h1>
+                    <div id="cLine"></div>
+                    <p class="cDesc"><b>Description:</b> <%= activities[i].description %> </p>
+                    <p class="cDesc"><b>Activity Location:</b> <%= activities[i].location %> </p>
+                    <p><b>When: </b><% const dD = new Date(activities[i].date_time); %>
+                        <% const formattedD = dD.toLocaleString('en-US'); %>
+                        <td><%= formattedD %></td></p>
+                    <p class="cDesc"><b>Capacity:</b> <%= activities[i].capacity %> </p>
+                </div>
+            </div>
+        </a>
+    <% } %>
+        
+    </div>
+</body>
+</html>

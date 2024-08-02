@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAP</title>
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body class="lContain">
+    <%- include ('partials/navbar.ejs') %>
+
+    <div class="loginItem">
+        
+        <a href="/communities">
+            <button type="button" class="backBtn">
+                <h1 class="navTxt">Back</h1>
+            </button>
+        </a>
+        <h1 class="headin">Create a New Community</h1>
+        
+        <div id="line"></div>
+        <div class="part">
+            
+            <form action="/cComm" method="POST" enctype="multipart/form-data">
+                <div class="part">
+                    <label for="image" class="title">Community Picture:</label><br>
+                    <input type="file" id="cPic" name="cPic" accept="image/*" required>
+                </div>
+                <div class="part">
+                    <label for="cName" class="title">Community Name:</label><br>
+                    <input type="text" id="cName" name="cName" class="input" required>
+                </div>
+                <div class="part">
+                    <label for="cDesc" class="title">Community Description:</label><br>
+                    <input type="text" name="cDesc" class="input" id="dDesc" required>
+                </div>
+
+                
+                
+                <div class="part">
+
+                    <div class="spart">
+                        <% if (msg.stat == 'ec') { %>
+                            <p class="sText">Community already exist</p>
+                        <% } %> 
+                    </div>
+                    <button type="submit" class="navBtn" id="sbtn"><h1 class="navTxt">Create!</h1></button> 
+                           
+                </div>
+            </form>
+            
+        
+        </div>
+        
+        
+    </div>
+    <script>
+        function checkRepeat(){
+            var cName = document.getElementById("cName").value;
+            for (var i = 0; i < document.getElementById("lLi").length; i++){
+                if (cComm[i].cName == cName){
+                    alert("Community name already exists!");
+                    console.log("Community name already exists!");
+                    return false;
+                }
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>

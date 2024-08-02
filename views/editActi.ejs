@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAP</title>
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body class="lContain">
+    <%- include ('partials/navbar.ejs') %>
+
+    <div class="loginItem">
+        <a href="/activities">
+            <button type="button" class="backBtn">
+                <h1 class="navTxt">Back</h1>
+            </button>
+        </a>
+        <h1 class="headin">Editing Activity: <%= editActi.title %></h1>
+        <div id="line"></div>
+        <div class="part">
+            
+            <form action="/editActi/<%= editActi.id %>" method="POST">
+                <div class="part">
+                    <div class="spart">
+                        <label for="title" class="title">Activity Name:</label><br>
+                        <input type="text" id="title" name="title" class="input" value = "<%= editActi.title %>" required>
+                    </div>
+                    <div class="spart">
+                        <% const date = new Date(editActi.date_time); const formattedD = date.toISOString().replace(/:\d{2}\.\d{3}\Z/g, ''); %>
+                        
+                        <label for="date_time" class="title">Activity Date:</label><br>
+                        <input type="datetime-local" name="date_time" class="input" id="date_time" value = <%= formattedD %> required>
+                    </div>
+
+                </div>
+                
+                <div class="part">
+                    <div class="spart">
+                        <label for="location" class="title">Activity Location:</label><br>
+                        <input type="text" name="location" class="input" id="location" value = "<%= editActi.location %>" required>
+                    </div>
+                    <div class="spart">
+                        <label for="capacity" class="title">Activity Capacity:</label><br>
+                        <input type="number" name="capacity" class="input" id="capacity" value= "<%= editActi.capacity %>" required>
+                    </div>
+                    
+                </div>
+                <div class="part">
+                    <label for="description" class="title">Activity Description:</label><br>
+                    <input type="text" name="description" class="input" id="description" style="min-height: 200px;" value = "<%= editActi.description %>" required>
+                </div>
+
+                
+                
+                <div class="part">
+                    <button type="submit" class="navBtn" id="sbtn"><h1 class="navTxt">Update!</h1></button> 
+                           
+                </div>
+            </form>
+            
+        
+        </div>
+        
+        
+    </div>
+</body>
+</html>

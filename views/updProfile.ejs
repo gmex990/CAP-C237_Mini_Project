@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAP</title>
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body class="lContain">
+    <%- include ('partials/navbar.ejs') %>
+    <div class="loginItem">
+        <h1 class="headin">Edit Profile</h1>
+        <div id="line"></div>
+        <form action="/updProfile" method="POST" enctype="multipart/form-data">
+            <div class="part">
+                <div class="spart">
+                    <label for="username" class="title">Username:</label>
+                    <input type="text" id="username" name="username" value = <%= updProfile.username %> required class="input">
+                </div>
+                <div class="spart">
+                    <label for="image">Current Profile Picture:</label><br>
+                    <img src = "/images/<%= updProfile.profile_pic %>" id="pProfile"><br><br>
+                    <input type="hidden" id="currentImage" name="currentImage" value="<%= updProfile.profile_pic %>">
+                    <label for="image">New Profile Picture:</label><br>
+                    <input type="file" id="image" name="image" accept="image/*" value="<%= updProfile.profile_pic %>"><br><br>
+                </div>
+                
+            </div>
+            <div class="part">
+                <div class="spart">
+                    <label for="password" class="title">Password:</label>
+                    <input type="password" id="password" name="password" value = <%= updProfile.password %> required class="input"><br>
+                </div>
+                <div class="spart">
+                    <label for="repassword" class="title">Re-enter Password:</label>
+                    <input type="password" id="repassword" name="repassword"  required class="input">
+                </div>
+            </div>
+            <div class="part">
+                <div class="spart">
+                    <label for="phone" class="title">Phone:</label>
+                    <input type="number" id="phone" name="phone" class="input" value = <%= updProfile.phone %> >
+                </div>
+                <div class="spart">
+                    <label for="email" class="title">Email:</label>
+                    <input type="email" id="email" name="email" value = <%= updProfile.email %> required class="input">
+                </div>
+            </div>
+            <div class="part">
+                <div class="spart">
+                    
+                    <% if (msg.stat == 'wp') { %>
+                        <p class="sText">Passwords does not match!</p>
+                    <% }else if (msg.stat == 'eu'){ %> 
+                        <p class="sText">Username has been taken, please try another one!</p>
+                    <% }else if(msg.stat == 'ee'){ %>
+                        <p class="sText">This email has been used, please use another one!</p>
+                    <% }else if(msg.stat == 'sp'){ %>
+                        <p class="sText">Please ensure that the password is at least 8 characters!</p>
+                    <% } %>
+                </div>
+                
+            </div>
+            <div class="part">
+                <button type="submit" id="submitSignup">Update!</button>
+            </div>
+            
+        </form>
+        
+    </div>
+</body>
+</html>

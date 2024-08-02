@@ -1,0 +1,20 @@
+
+
+<nav class="bg">
+    <a href="/"><img src="/images/logo.png" alt="logo" class="logo"></a>
+    <div id="nav_link">
+        <a href="/" class="navLink"><p>Home<img src="/images/arrow.png"></p></a>
+        <a href="/communities" class="navLink"><p>Communities<img src="/images/arrow.png"></p></a>
+        <a href="/activities" class="navLink"><p>Activities<img src="/images/arrow.png"></p></a>
+    </div>
+    <div id="profile">
+        <% if (user.loggedIn) { %>
+            <a href="/profile" class="navLink" aria-colspan="usernamex"><p><%= user.name %></p></a>
+            <a href="/profile"><img src="/images/<%= user.profile %>" alt="profile" class="profile" id="profileI"></a>
+        <% } else if (user.loggedIn == false){ %>
+            <a href="/login" class="navLink" aria-colspan="usernamex"><p>Login</p></a>
+            <a href="/login"><img src="/images/profile1.png" alt="profile" class="profile" id="profileI"></a>
+        
+        <% } %>
+    </div>
+</nav>

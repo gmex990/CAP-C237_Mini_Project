@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAP</title>
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body class="lContain">
+    <%- include ('partials/navbar.ejs') %>
+
+    <div class="loginItem">
+        <a href="/activities">
+            <button type="button" class="backBtn">
+                <h1 class="navTxt">Back</h1>
+            </button>
+        </a>
+        <h1 class="headin">Create a New Activity</h1>
+        <div id="line"></div>
+        <div class="part">
+            
+            <form action="/cActi" method="POST" enctype="multipart/form-data">
+                <div class="part">
+                    <div class="spart">
+                        <label for="title" class="title">Activity Name:</label><br>
+                        <input type="text" id="title" name="title" class="input" required>
+                    </div>
+                    <div class="spart">
+                        <label for="date_time" class="title">Activity Date:</label><br>
+                        <input type="datetime-local" name="date_time" class="input" id="date_time" required>
+                    </div>
+
+                </div>
+                
+                <div class="part">
+                    <div class="spart">
+                        <label for="location" class="title">Activity Location:</label><br>
+                        <input type="text" name="location" class="input" id="location" required>
+                    </div>
+                    <div class="spart">
+                        <label for="capacity" class="title">Activity Capacity:</label><br>
+                        <input type="number" name="capacity" class="input" id="capacity" required>
+                    </div>
+                    
+                </div>
+                <div class="part">
+                    <label for="description" class="title">Activity Description:</label><br>
+                    <input type="text" name="description" class="input" id="description" style="min-height: 200px;" required>
+                </div>
+
+                
+                
+                <div class="part">
+                    <button type="submit" class="navBtn" id="sbtn"><h1 class="navTxt">Create!</h1></button> 
+                           
+                </div>
+            </form>
+            
+        
+        </div>
+        
+        
+    </div>
+</body>
+</html>
