@@ -23,11 +23,17 @@ app.use(express.urlencoded({
 }));
 
 
+// const connection = mysql.createConnection({
+//     host: 'localhost',
+//     user: 'root',
+//     password: '',
+//     database: 'ca_cap'
+// });
 const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'ca_cap'
+    host: 'mysql-yuheng.alwaysdata.net',
+    user: 'yuheng',
+    password: 'Yuheng9885*',
+    database: 'yuheng_c237_mini_prj'
 });
 
 connection.connect((err) => {
